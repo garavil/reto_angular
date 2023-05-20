@@ -1,0 +1,39 @@
+div{
+    height: 700px;
+    width: 100%;
+    background-color: var(--naranja);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    
+}
+
+div h1{
+    width: 30%;
+    color: var(--azul);
+    text-align: center;
+}
+div section{
+    width: 30%;
+    height: 70%;
+    border: 2px solid var(--morado);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+div section img{
+    border: 2px solid var(--morado);
+    width: 80%;
+    height: 80%;
+
+}
+
+div h3{
+    width: 30%;
+    color: var(--azul);
+    text-align: center;
+    margin: 10px;
+}

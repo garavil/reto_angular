@@ -1,0 +1,25 @@
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--verde);
+    height: 700px;
+    width: 100%;
+}
+form div{
+    /* border: 2px solid green; */
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+form div label{
+    color: var(--morado)
+}
+
+form button{
+    width: 150px;
+    margin-top: 10px;
+    background-color: var(--morado);
+    color: var(--amarillo)
+}

@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --azul : #546F8E;
+    --morado : #342335;
+    --verde : #8BA59A;
+    --amarillo : #DDDBBB;
+    --naranja : #EAB393;
+}
