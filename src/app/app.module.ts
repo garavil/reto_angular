@@ -11,6 +11,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { BooksComponent } from './pages/books/books.component';
 import { MiPipePipe } from './pipes/mi-pipe.pipe';
+import { CardComponent } from './component/card/card.component';
 
 
 
@@ -25,6 +26,7 @@ import { MiPipePipe } from './pipes/mi-pipe.pipe';
     ProfileComponent,
     BooksComponent,
     MiPipePipe,
+    CardComponent,
     
   ],
   imports: [

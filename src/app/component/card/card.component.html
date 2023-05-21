@@ -1,0 +1,18 @@
+
+<!-- <div *ngFor="let book of books; let i = index"> -->
+<section>
+    <button class="botonX" (click)="enviarTarjeta()">X</button>
+    <img src="{{book.photo}}" alt="">
+    <div>
+        <h4>{{book.title}}</h4>
+        <h5>{{book.author}}</h5>
+        <h6>{{book.type}}</h6>
+        <h6>{{book.id_book | codigo}} </h6>
+        <h6>{{book.price}} €</h6>
+    </div>
+
+    <button class="botonPar">Comprar</button>
+    
+    
+    <!-- <button [ngClass]=" i % 2  == 0 ? 'botonImpar' : 'botonPar' ">Comprar</button> -->
+</section>
