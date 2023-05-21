@@ -1,0 +1,31 @@
+<body>
+    <section>
+        <div><img src="{{imagenPerfil}}" alt=""></div>
+        <h1> {{user.name}} {{user.last_name}} </h1>
+        <aside>
+            <aside class="titulo">
+                <p>NOMBRE</p>
+                <p>APELLIDO</p>
+                <p>EMAIL</p>
+            
+            </aside>
+            <aside class="titulo2">
+                <p> {{user.name}} </p>
+                <p> {{user.last_name}} </p>
+                <p> {{user.email}} </p>
+            </aside>
+        </aside>
+    </section>
+    <section >
+        <div class="formulario">
+            <h1>Editar Perfil</h1>
+            <form>
+                <input type="text" placeholder="Nombre" #nombre>
+                <input type="text" placeholder="Apellidos" #apellidos>
+                <input type="text" placeholder="Correo" #correo>
+                <input type="text" placeholder="Url" #url>
+                <button type="reset" (click)="modificar(nombre.value, apellidos.value, correo.value)"> Modificar </button>
+            </form>
+        </div>
+    </section>
+</body>

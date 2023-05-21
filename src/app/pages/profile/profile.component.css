@@ -1,0 +1,99 @@
+body{
+    height: 700px;
+    width: 100%;
+    background-color: var(--morado);
+    display:flex;
+    align-items: center;
+    
+}
+
+section{
+    width: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--naranja)
+}
+
+section div img{
+    border-radius: 100px;
+}
+
+section aside{
+
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    height: 200px;
+    background-color: var(--verde);
+
+}
+
+section aside aside{
+    display: flex;
+    flex-direction: column;
+}
+.titulo{
+    color: var(--azul);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.titulo p{
+    border: 2px solid var(--azul);
+    text-align: center;
+    width: 70%;
+}
+
+.titulo2{
+    color: var(--azul);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.titulo2 p{
+    text-align: center;
+    width: 90%;
+    background-color: var(--amarillo);
+}
+
+.formulario{
+    width: 80%;
+    height: 80%;
+    background-color: var(--verde);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+section div form{
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+section div form input{
+    background-color: var(--amarillo);
+    border: none;
+    border-radius: 4px;
+    
+}
+::placeholder {
+    color: var(--azul);
+}
+
+section div form button{
+    border: none;
+    border: 2px solid var(--azul);
+    background-color: var(--verde);
+    color: var(--naranja);
+    border-radius: 4px;
+    width: 100px;
+
+}
