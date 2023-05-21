@@ -15,10 +15,11 @@ export class ProfileComponent {
     this.imagenPerfil = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmOJnY9mCcLL3zqkGyqU-pI0fWKDZ-pq4sWQ&usqp=CAU"
   }
 
-  public modificar(newName:string, newLast_name:string, newEmail:string){
+  public modificar(newName:string, newLast_name:string, newEmail:string, newPhoto:string ){
     this.user.name = newName;
     this.user.last_name = newLast_name;
     this.user.email = newEmail;
+    this.imagenPerfil = newPhoto;
     
   }
 

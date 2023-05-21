@@ -19,6 +19,8 @@ section{
 
 section div img{
     border-radius: 100px;
+    height: 200px;
+    width: 350px;
 }
 
 section aside{

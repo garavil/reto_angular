@@ -1,0 +1,32 @@
+<section *ngIf="books.length>0; else noHay">
+    <card *ngFor="let book of books; let i = index">
+        <img src="{{book.photo}}" alt="">
+        <div>
+            <h4>{{book.title}}</h4>
+            <h5>{{book.author}}</h5>
+            <h6>{{book.type}}</h6>
+            <h6>{{book.id_book | codigo}} </h6>
+            <h6>{{book.price}} €</h6>
+        </div>
+        <button [ngClass]=" i % 2  == 0 ? 'botonImpar' : 'botonPar' ">Comprar</button>
+    </card>
+</section>
+
+<ng-template #noHay>
+    <section>
+        <h2>No hay libros</h2>
+    </section>
+</ng-template>
+
+<form action="">
+    <h1> Añadir nuevo libro </h1>
+    <div>
+        <input type="text" placeholder="Título" #titulo>
+        <input type="text" placeholder="Estilo de tapa" #tapa>
+        <input type="text" placeholder="Autor o autora" #autor>
+        <input type="number" placeholder="Precio" #precio>
+        <input type="url" placeholder="Foto" #foto>
+        <input type="number" placeholder="Código de libro" #ref>
+    </div>
+    <button type="reset" (click)="insertar(titulo.value, tapa.value, autor.value, precio.value, foto.value, ref.value)"> Añadir </button>
+</form>
