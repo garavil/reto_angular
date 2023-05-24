@@ -8,9 +8,10 @@ import {Book} from 'src/app/models/book';
 export class CardComponent {
 
   @Input() book: Book;
-  @Output() datoslibro = new EventEmitter <string>();
+  @Input() par:boolean;
+  @Output() datoslibro = new EventEmitter <number>();
 
   enviarTarjeta(){
-    this.datoslibro.emit(this.book.title)
+    this.datoslibro.emit(this.book.id_book)
   }
 }

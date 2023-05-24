@@ -1,7 +1,7 @@
 <section *ngIf="books.length>0; else noHay">
    
-    <ng-container *ngFor="let book of books; let i = index">
-        <app-card [book]="book" (datoslibro)="borrarLibro($event)"></app-card>
+    <ng-container *ngFor="let book of books; let par = even">
+        <app-card [book]="book" [par]="par" (datoslibro)="borrarLibro($event)"></app-card>
     </ng-container>
     
 </section>
