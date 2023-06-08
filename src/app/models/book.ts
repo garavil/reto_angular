@@ -7,7 +7,7 @@ export class Book {
     public price: number;
     public photo: string;
 
-    constructor(title:string, type:string, author:string, price:number, photo:string, id_book:number=0, id_user:number=0){
+    constructor(title:string, type:string, author:string, price:number, photo:string, id_book:number=0 , id_user:number=0){
         this.title = title;
         this.type = type;
         this.author = author;

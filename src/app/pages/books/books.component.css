@@ -64,7 +64,7 @@ h6{
     background-color: var(--azul);
 }
 
-form{
+/* form{
     height: 400px;
     background-color: var(--azul);
     display: flex;
@@ -95,4 +95,4 @@ form button{
     border-radius: 10px;
     background-color: var(--morado);
     color: var(--amarillo)
-}
+} */

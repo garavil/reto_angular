@@ -1,0 +1,38 @@
+section{
+    height: 700px;
+
+}
+
+form{
+    height: 100%;
+    background-color: var(--amarillo);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+form h1{
+    color: var(--morado)
+}
+form div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+form div input{
+    background-color: var(--amarillo);
+    border: none;
+    border-radius: 10px;
+    border: 2px solid var(--azul);
+    text-align: center;
+    
+}
+form button{
+    width: 100px;
+    height: 30px;
+    border:none;
+    border-radius: 10px;
+    background-color: var(--morado);
+    color: var(--amarillo)
+}
