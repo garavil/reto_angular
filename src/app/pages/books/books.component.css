@@ -96,3 +96,16 @@ form button{
     background-color: var(--morado);
     color: var(--amarillo)
 } */
+
+.search{
+    display: flex;
+    justify-content: center;
+    height: 20%;
+    background-color: var(--naranja);
+}
+input{
+    width: 300px;
+}
+button{
+    border:none;
+}

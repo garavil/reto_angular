@@ -1,16 +1,16 @@
 <section>
     <form action="">
-        <h1> Añadir nuevo libro </h1>
+        <h1> Editar un libro </h1>
         <div>
+            <input type="number" placeholder="Código de libro" #ref>
             <input type="text" placeholder="Título" #titulo>
             <input type="text" placeholder="Estilo de tapa" #tapa>
             <input type="text" placeholder="Autor o autora" #autor>
             <input type="number" placeholder="Precio" #precio>
             <input type="url" placeholder="Foto" #foto>
-            <input type="number" placeholder="Código de libro" #ref>
             <input type="number" placeholder="Código de usuario" #ref2>
 
         </div>
-        <button type="reset" (click)="addnuevo(titulo.value, tapa.value, autor.value, +precio.value, foto.value, +ref.value, +ref2.value)"> Añadir </button>
+        <button type="reset" (click)="editar(titulo.value, tapa.value, autor.value, +precio.value, foto.value, +ref.value, +ref2.value)"> Añadir </button>
     </form>
 </section>

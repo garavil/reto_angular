@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Book } from 'src/app/models/book';
-import { BooksComponent } from '../books/books.component';
+import { BooksService } from 'src/app/shared/books.service';
 
 @Component({
   selector: 'app-addbook',
@@ -9,11 +9,21 @@ import { BooksComponent } from '../books/books.component';
 })
 export class AddbookComponent {
 
-  books = []
+  constructor(private booksService : BooksService){}
 
-  insertar(titulo:string, tapa:string, autor:string, precio:number, foto:string, codigo:number){
-    let nuevo = new Book (titulo, tapa, autor, precio, foto, codigo)
-    this.books.push(nuevo)
+  addnuevo(title:string, type:string, author:string, price:number, photo:string, id_book:number, id_user:number){
+    let nuevolibro = {
+      title,
+      type,
+      author,
+      price,
+      photo,
+      id_book,
+      id_user
+    }
+
+    this.booksService.addBook(nuevolibro);
+  }
 
   }
-}
+

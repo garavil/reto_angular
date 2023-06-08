@@ -13,6 +13,8 @@ import { BooksComponent } from './pages/books/books.component';
 import { MiPipePipe } from './pipes/mi-pipe.pipe';
 import { CardComponent } from './component/card/card.component';
 import { AddbookComponent } from './pages/addbook/addbook.component';
+import { FormsModule } from '@angular/forms';
+import { UpdatebookComponent } from './pages/updatebook/updatebook.component';
 
 
 
@@ -29,11 +31,13 @@ import { AddbookComponent } from './pages/addbook/addbook.component';
     MiPipePipe,
     CardComponent,
     AddbookComponent,
+    UpdatebookComponent,
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
