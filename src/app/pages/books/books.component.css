@@ -100,12 +100,26 @@ form button{
 .search{
     display: flex;
     justify-content: center;
-    height: 20%;
+    height: 30%;
+    gap: 5px;
     background-color: var(--naranja);
 }
 input{
     width: 300px;
+    margin-top: 10px;
+    text-align: center;
+    background-color: var(--naranja);
+    border:none;
+    border: 2px solid var(--verde);
+    border-radius: 8px;
+
 }
 button{
     border:none;
+    width:100px;
+    margin-top: 10px;
+    background-color: var(--verde);
+    color: var(--amarillo);
+    border-radius: 8px;
+
 }
