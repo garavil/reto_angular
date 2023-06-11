@@ -1,19 +1,38 @@
-<form>
+<form [formGroup]="registro" (ngSubmit)="onSubmit(registro)">
   <div>
     <label>Nombre y apellidos</label>
-    <input type="text">
+    <input type="text" id="nombre" formControlName="nombre" [ngClass]="{'is-invalid': (registro.get('nombre').dirty || registro.get('nombre').touched) && registro.get('nombre').invalid }">
+    <div *ngIf="registro.get('nombre').invalid" class="invalid-feedback">
+      Este campo es obligatorio
+    </div>
   </div>
   <div>
     <label>Email</label>
-    <input type="email">
+    <input type="email" id="correo" formControlName="correo" email [ngClass]="{'is-invalid': (registro.get('correo').dirty || registro.get('correo').touched) && registro.get('correo').invalid }">
+    <div class="invalid-feedback" *ngIf="registro.get('correo').invalid">
+      <div *ngIf="registro.get('correo').errors.required">Este campo es obligatorio</div>
+      <div *ngIf="registro.get('correo').errors.email ">El correo es incorrecto</div>
+    </div>
+      
+    
+    
+      
+   
   </div>
   <div>
     <label>Contraseña</label>
-    <input type="password">
+    <input type="password" id="pass" formControlName="pass" [ngClass]="{'is-invalid': (registro.get('pass').dirty || registro.get('pass').touched) && registro.get('pass').invalid }">
+    <div *ngIf="registro.get('pass').invalid" class="invalid-feedback" >
+      Este campo es obligatorio
+    </div>
   </div>
   <div>
     <label>Repetir contraseña</label>
-    <input type="password">
+    <input type="password" id="pass2" formControlName="pass2" [ngClass]="{'is-invalid': (registro.get('pass2').dirty || registro.get('pass2').touched) && registro.get('pass2').invalid }">
+    <div class="invalid-feedback" *ngIf="registro.get('pass2').invalid">
+      Este campo es obligatorio
+    </div>
   </div>
-  <button type="submit">Enviar</button>  
+  <button [disabled]="registro.invalid" >Enviar</button>  
 </form>
+

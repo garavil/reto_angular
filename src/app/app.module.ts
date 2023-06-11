@@ -15,6 +15,9 @@ import { CardComponent } from './component/card/card.component';
 import { AddbookComponent } from './pages/addbook/addbook.component';
 import { FormsModule } from '@angular/forms';
 import { UpdatebookComponent } from './pages/updatebook/updatebook.component';
+import { LoginComponent } from './pages/login/login.component';
+import { FormLoginComponent } from './component/form-login/form-login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -32,12 +35,15 @@ import { UpdatebookComponent } from './pages/updatebook/updatebook.component';
     CardComponent,
     AddbookComponent,
     UpdatebookComponent,
+    LoginComponent,
+    FormLoginComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
