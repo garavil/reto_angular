@@ -6,13 +6,13 @@
     <form #miForm="ngForm" (ngSubmit)="onSubmit(miForm)">
 
         USUARIO <input email name="email" [(ngModel)]="email" #emailId="ngModel" [ngClass]="{'is-invalid': (emailId.dirty || emailId.touched) && emailId.invalid }" required>
-        <div *ngIf="(emailId.dirty || emailId.touched) && emailId.invalid" class="'invalid-feedback" >
+        <div *ngIf="(emailId.dirty || emailId.touched) && emailId.invalid" class="invalid-feedback" >
             <p *ngIf="emailId.errors.required" >El email es obligatorio</p>
             <p *ngIf="emailId.errors.email" >El email es incorrecto</p>
         </div>
 
         CONTRASEÑA <input type="password" name="password" [(ngModel)]="password" #passId="ngModel" [ngClass]="{'is-invalid': (passId.dirty || passId.touched) && passId.invalid }" required> 
-        <div *ngIf="(passId.dirty || passId.touched) && passId.invalid" class="'invalid-feedback" >
+        <div *ngIf="(passId.dirty || passId.touched) && passId.invalid" class="invalid-feedback" >
             <p *ngIf="passId.errors.required" >La contraseña es obligatoria</p>
         </div>
 

@@ -12,8 +12,8 @@ export class FormLoginComponent {
   public password: string ='';
   
   onSubmit(form:NgForm){
-    console.log('Correo;', this.email);
-    console.log('Contraseña', this.password);
+    console.log('Correo:', this.email);
+    console.log('Contraseña:', this.password);
   }
 
 }

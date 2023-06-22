@@ -9,30 +9,49 @@ import { BooksService } from 'src/app/shared/books.service';
 })
 export class BooksComponent {
   public books: Book[];
-  public buscar: string = '';
-  public filtrar: Book[];
+  // public buscar: string = '';
+  // public filtrar: Book[];
 
   constructor(public bookService: BooksService){
-    this.books = this.bookService.getAll();
-    this.filtrar = this.books;
+    this.bookService.getAll().subscribe((data:Book[])=>{
+      this.books = data;
+    })
   }
 
-  filtrarLibro(){
-    if(this.buscar.trim() === ""){
-      this.filtrar = this.books;
+  filtrarLibro(id_book){
+    if(id_book != ""){
+      for (let i = 0; i < this.books.length; i++) {
+        if (Number(id_book) == this.books[i].id_book) {
+          this.bookService.getOne(Number(id_book)).subscribe((data:Book[])=>{
+            this.books = data;
+          })
+        }else{
+          let filtrarLibroarr:Book[] = [];
+          for (const book of this.books) {
+            if (book.id_book.toString().indexOf(id_book) !== -1) {
+              filtrarLibroarr.push(book);
+            }
+          }
+          this.books = filtrarLibroarr;
+        }
+      }
+      
     } else {
-      let numero_id = Number(this.buscar);
-      let libroEncontrado = numero_id ? this.bookService.getOne(numero_id): undefined;
-      this.filtrar = libroEncontrado ? [libroEncontrado]:[];
-    }
-  }
+      this.bookService.getAll().subscribe((data:Book[])=>{
+        this.books = data;
+      })
+      
+    }}
 
-  borrarLibro(datoslibro:number){
 
-    let borrar = this.bookService.delete(datoslibro);
-    if(borrar){
-      this.books = this.bookService.getAll();
-      this.filtrarLibro();
-    }
+  borrarLibro(id_book){
+
+    this.bookService.deleteBook(id_book).subscribe((data)=>{
+      if(data){
+        this.bookService.getAll().subscribe((data:Book[])=>{
+          this.books = data;
+        }); 
+      }
+    })
   }
 }
