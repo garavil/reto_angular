@@ -10,27 +10,27 @@ import { Observable } from 'rxjs';
 
 export class BooksService {
 
-  private url = "localhost:4200/book"
+  private url = "http://localhost:3000/book"
   constructor(private http:HttpClient){}
 
-  getAll(){
+  getAll(): Observable<any>{
     return this.http.get(this.url)
   }
 
-  getOne(id_book:number){
+  getOne(id_book:number): Observable<any>{
     return this.http.get(this.url + '?id=' + id_book)
   }
 
-  addBook(book:Book){
+  addBook(book:Book): Observable<Object>{
     return this.http.post(this.url, book)
   }
 
-  editBook(book:Book){
+  editBook(book:Book): Observable<any>{
     return this.http.put(this.url, book)
   }
-deleteBook(id_book:number){
-  return this.http.request('delete', this.url, {body:{id_book:id_book}})
-}
+  deleteBook(id_book:number): Observable<Object>{
+    return this.http.request('delete', this.url, {body:{id_book:id_book}})
+  }
 
 
 }

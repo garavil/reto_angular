@@ -4,7 +4,18 @@ section{
     flex-wrap: wrap;
     justify-content: space-around;
     background-color: var(--naranja);
+    
+    height: 1700px;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: var(--naranja);
+   
     min-height: 700px;
+
 }
 card{
     border: 2px solid var(--verde);

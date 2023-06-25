@@ -1,21 +1,22 @@
 <div class="search">
-    <!-- <input type="text" placeholder="Introduce un id"[(ngModel)]="buscar"> -->
-    <input type="text" placeholder="Introduce un id" #id_buscado>
-    <button (click)="filtrarLibro(id_buscado.value)" >Buscar</button>
+    <input type="text" placeholder="Introduce un id"[(ngModel)]="buscar">
+    <button (click)="filtrarLibro(buscar)" >Buscar</button>
 </div>
 
-<section *ngIf="books.length>0; else noHay">
+<main class="main">
+
+    <section  *ngIf="books.length>0; else noHay">
    
-    <ng-container *ngFor="let book of filtrar; let par = even">
-        <app-card [book]="book" [par]="par" (datoslibro)="borrarLibro($event)"></app-card>
-    </ng-container>
+        <ng-container *ngFor="let book of books; let par = even">
+            <app-card [book]="book" [par]="par" (datoslibro)="borrarLibro($event)"></app-card>
+        </ng-container>
     
-</section>
-
-<ng-template #noHay>
-    <section>
-        <h2>No hay libros</h2>
     </section>
-</ng-template>
 
+    <ng-template #noHay>
+        <section class="main">
+         <h2>No hay libros</h2>
+        </section>
+    </ng-template>
+</main>
 

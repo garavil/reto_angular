@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Book } from 'src/app/models/book';
 import { BooksService } from 'src/app/shared/books.service';
-import { NgForm } from '@angular/forms';
+
 
 
 @Component({
@@ -12,6 +12,13 @@ import { NgForm } from '@angular/forms';
 })
 export class UpdatebookComponent {
   public books: Book[];
+  public title:string = '';
+  public type:string = '';
+  public author:string = '';
+  public price:number;
+  public photo:string = '';
+  public id_book:number;
+  
   constructor(
     public route:Router,
     public bookService: BooksService
@@ -20,15 +27,9 @@ export class UpdatebookComponent {
       this.books = data;
     })
   }
-  public title:string = '';
-  public type:string = '';
-  public author:string = '';
-  public price:number;
-  public photo:string = '';
-  public id_book:number;
-
-  editBook(title, type, author, price, photo, id_book, id_user){
-    let nuevolibro = new Book(this.title,this.type,this.author,this.price,this.photo,this.id_book,0)
+ 
+  editBook(title:string, type:string, author:string, price:number, photo:string, id_book:number, id_user:number){
+    let nuevolibro = new Book(title,type, author, price, photo, id_book,0)
 
     this.bookService.editBook(nuevolibro).subscribe((data:Book[])=>{
       this.books = data;

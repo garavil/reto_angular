@@ -8,43 +8,43 @@ import { BooksService } from 'src/app/shared/books.service';
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent {
-  public books: Book[];
-  // public buscar: string = '';
-  // public filtrar: Book[];
+  public books: Book[] = [];
+  public buscar: string = "";
+  public filtrar: Book[];
 
   constructor(public bookService: BooksService){
     this.bookService.getAll().subscribe((data:Book[])=>{
-      this.books = data;
-    })
+      this.books = data;})
   }
 
-  filtrarLibro(id_book){
-    if(id_book != ""){
-      for (let i = 0; i < this.books.length; i++) {
-        if (Number(id_book) == this.books[i].id_book) {
-          this.bookService.getOne(Number(id_book)).subscribe((data:Book[])=>{
-            this.books = data;
-          })
-        }else{
-          let filtrarLibroarr:Book[] = [];
-          for (const book of this.books) {
-            if (book.id_book.toString().indexOf(id_book) !== -1) {
-              filtrarLibroarr.push(book);
-            }
+
+filtrarLibro(buscar:string){
+  
+  if(buscar != ""){
+    for (let i = 0; i < this.books.length; i++) {
+      if (Number(buscar) == this.books[i].id_book) {
+        this.bookService.getOne(Number(buscar)).subscribe((data:Book[])=>{
+          this.books = data;
+        })
+      }else{
+        let filtrarLibroarr:Book[] = [];
+        for (const book of this.books) {
+          if (book.id_book.toString().indexOf(buscar) !== -1) {
+            filtrarLibroarr.push(book);
           }
-          this.books = filtrarLibroarr;
         }
+        this.books = filtrarLibroarr;
       }
-      
-    } else {
-      this.bookService.getAll().subscribe((data:Book[])=>{
-        this.books = data;
-      })
-      
-    }}
+    }
+    
+  } else {
+    this.bookService.getAll().subscribe((data:Book[])=>{
+      this.books = data;
+    })
+    
+  }}
 
-
-  borrarLibro(id_book){
+  borrarLibro(id_book:number){
 
     this.bookService.deleteBook(id_book).subscribe((data)=>{
       if(data){
