@@ -1,8 +1,15 @@
-<form [formGroup]="registro" (ngSubmit)="onSubmit(registro)">
+<form [formGroup]="registro" (ngSubmit)="onSubmit()">
   <div>
-    <label>Nombre y apellidos</label>
+    <label>Nombre </label>
     <input type="text" id="nombre" formControlName="nombre" [ngClass]="{'is-invalid': (registro.get('nombre').dirty || registro.get('nombre').touched) && registro.get('nombre').invalid }">
     <div *ngIf="registro.get('nombre').invalid" class="invalid-feedback">
+      Este campo es obligatorio
+    </div>
+  </div>
+  <div>
+    <label>Apellido </label>
+    <input type="text" id="apellido" formControlName="apellido" [ngClass]="{'is-invalid': (registro.get('apellido').dirty || registro.get('apellido').touched) && registro.get('apellido').invalid }">
+    <div *ngIf="registro.get('apellido').invalid" class="invalid-feedback">
       Este campo es obligatorio
     </div>
   </div>

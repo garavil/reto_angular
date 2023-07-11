@@ -3,7 +3,7 @@
     <div>
         <h1>Inicia sesión</h1> 
     </div>
-    <form #miForm="ngForm" (ngSubmit)="onSubmit(miForm)">
+    <form #miForm="ngForm" (ngSubmit)="onSubmit()">
 
         USUARIO <input email name="email" [(ngModel)]="email" #emailId="ngModel" [ngClass]="{'is-invalid': (emailId.dirty || emailId.touched) && emailId.invalid }" required>
         <div *ngIf="(emailId.dirty || emailId.touched) && emailId.invalid" class="invalid-feedback" >

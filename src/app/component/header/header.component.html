@@ -1,13 +1,16 @@
 <header>
     <h1>My books</h1>
-    <nav>
+    <nav **ngIf="this.userService.online ; else online">
         <a routerLink="">Inicio</a>
         <a routerLink="login">Login</a>
+        <a routerLink="profile">Perfil</a>
+
+    </nav>
+    <ng-template #online>
         <a routerLink="register">Registro</a>
         <a routerLink="books">Libros</a>
         <a routerLink="add">Añadir</a>
         <a routerLink="edit">Editar</a>
-        <a routerLink="profile">Perfil</a>
-
-    </nav>
+    </ng-template>
+    
 </header>
